@@ -1,4 +1,4 @@
-# SUTD Cybersecurity Track
+# SUTD Security Track
 ## 50.020 Network Security Lab Assignments (Spring 2020)
 Taught by Professor Jiang Wenchao  
 
