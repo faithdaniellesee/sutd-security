@@ -1,0 +1,1 @@
+Lab 6 requires the use of lab 4. I had some errors with my code in lab 4, so I informed my Professor accordingly and used my classmate's lab 4 code with credits given to him. It is written at the top of the file that the code is not mine. 
