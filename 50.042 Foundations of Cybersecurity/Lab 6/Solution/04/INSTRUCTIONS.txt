@@ -1,0 +1,4 @@
+On the terminal, in this folder, run the following commands to encrypt and decrypt the file using the 80-bit shared key that was generated.
+
+1) python3 ecb.py -i message.txt -o message_encrypt.txt -k key.txt -m e
+2) python3 ecb.py -i message_encrypt.txt -o message_decrypt.txt -k key.txt -m d
