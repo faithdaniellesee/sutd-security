@@ -2,11 +2,23 @@ from debug import *
 from zoodb import *
 import rpclib
 
+sockname = "/authsvc/sock"
+c = rpclib.client_connect(sockname)
+
 def login(username, password):
-    ## Fill in code here.
+    data = {}
+    data['username'] = username
+    data['password'] = password
+    return c.call('login', **data)
 
 def register(username, password):
-    ## Fill in code here.
+    data = {}
+    data['username'] = username
+    data['password'] = password
+    return c.call('register',**data)
 
 def check_token(username, token):
-    ## Fill in code here.
+    data = {}
+    data['username'] = username
+    data['token'] = token
+    return c.call('check_token',**data)
