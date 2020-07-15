@@ -24,11 +24,12 @@ class Transfer(TransferBase):
     amount = Column(Integer)
     time = Column(String)
 
-# exercise 5
+# exercise 5 & 6
 class Cred(CredBase):
     __tablename__ = "cred"
     username = Column(String(128), primary_key=True)
     password = Column(String(128))
+    salt = Column(String(128))
     token = Column(String(128))
 
 def dbsetup(name, base):
