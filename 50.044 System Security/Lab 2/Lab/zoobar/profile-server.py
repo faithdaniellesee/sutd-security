@@ -53,14 +53,21 @@ class ProfileAPIServer(rpclib.RpcServer):
 def run_profile(pcode, profile_api_client):
     globals = {'api': profile_api_client}
     exec pcode in globals
-
+        
 class ProfileServer(rpclib.RpcServer):
     def rpc_run(self, pcode, user, visitor):
         #uid = 0
         uid = 61018
 
         userdir = '/tmp'
-
+        userprofile = user
+        userprofile = userprofile.replace("/","").replace(".","_")
+        userdir += '/'
+        userdir += userprofile
+        if not os.path.exists(userdir):
+            os.mkdir(userdir)
+            os.chmod(userdir, 0330) # set perms: d-wx-wx---
+            
         (sa, sb) = socket.socketpair(socket.AF_UNIX, socket.SOCK_STREAM, 0)
         pid = os.fork()
         if pid == 0:
