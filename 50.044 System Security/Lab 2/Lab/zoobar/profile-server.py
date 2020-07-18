@@ -56,7 +56,8 @@ def run_profile(pcode, profile_api_client):
 
 class ProfileServer(rpclib.RpcServer):
     def rpc_run(self, pcode, user, visitor):
-        uid = 0
+        #uid = 0
+        uid = 61018
 
         userdir = '/tmp'
 
