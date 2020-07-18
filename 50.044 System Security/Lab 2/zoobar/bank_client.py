@@ -5,11 +5,12 @@ import rpclib
 sockname = "/banksvc/sock"
 c = rpclib.client_connect(sockname)
 
-def transfer(sender, recipient, zoobars):
+def transfer(sender, recipient, zoobars, token):
     data = {}
     data['sender'] = sender
     data['recipient'] = recipient
     data['zoobars'] = zoobars
+    data['token'] = token
     return c.call('transfer', **data)
 
 def balance(username):

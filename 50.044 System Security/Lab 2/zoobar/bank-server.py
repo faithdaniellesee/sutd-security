@@ -5,15 +5,21 @@ import sys
 import bank
 from debug import *
 from sqlalchemy.orm import class_mapper
+import auth_client
 
 def serialize(model):
     cols = [i.key for i in class_mapper(model.__class__).columns]
     return dict((i, getattr(model, i)) for i in cols)
     
 class BankRpcServer(rpclib.RpcServer):
-    def rpc_transfer(self, sender, recipient, zoobars):
-        return bank.transfer(sender, recipient, zoobars)
+    # def rpc_transfer(self, sender, recipient, zoobars):
+    #     return bank.transfer(sender, recipient, zoobars)
 
+#exercise 8
+    def rpc_transfer(self, sender, recipient, zoobars, token):
+        assert (auth_client.check_token(sender, token)), ValueError()
+        return bank.transfer(sender, recipient, zoobars)
+        
     def rpc_balance(self, username):
         return bank.balance(username)
 
