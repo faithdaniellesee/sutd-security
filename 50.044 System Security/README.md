@@ -3,4 +3,6 @@
 Taught by Professor Dinh Tien Tuan Anh.  
 Assisted by PhD student Garbelini Matheus Eduardo.  
 
-I thought NetSec labs were tedious, SysSec tore me a new one. Thankfully we could work in pairs, so I teamed up with Ryan for this.
+I thought NetSec labs were tedious, SysSec tore me a new one. Thankfully we could work in pairs, so I teamed up with Ryan for this.  
+
+![Grades](/50.044%20System%20Security/50.044.jpg)
